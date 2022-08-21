@@ -74,10 +74,6 @@
         <div class="col-xs-7">
           <h4 id="getCookie"><a href="https://on.cypress.io/getcookie">cy.getCookie()</a></h4>
           <p>To get a browser cookie, use the <a href="https://on.cypress.io/getcookie"><code>cy.getCookie()</code></a> command.</p>
-          <pre><code class="javascript">cy.get('#getCookie .set-a-cookie').click()
-
-// cy.getCookie() yields a cookie object
-cy.getCookie('token').should('have.property', 'value', '123ABC')</code></pre>
         </div>
         <div class="col-xs-5">
           <div class="well">
@@ -95,21 +91,6 @@ cy.getCookie('token').should('have.property', 'value', '123ABC')</code></pre>
         <div class="col-xs-7">
           <h4 id="getCookies"><a href="https://on.cypress.io/getcookies">cy.getCookies()</a></h4>
           <p>To get all browser cookies, use the <a href="https://on.cypress.io/getcookies"><code>cy.getCookies()</code></a> command.</p>
-          <pre><code class="javascript">cy.getCookies().should('be.empty')
-
-cy.get('#getCookies .set-a-cookie').click()
-
-// cy.getCookies() yields an array of cookies
-cy.getCookies().should('have.length', 1).should((cookies) => {
-
-  // each cookie has these properties
-  expect(cookies[0]).to.have.property('name', 'token')
-  expect(cookies[0]).to.have.property('value', '123ABC')
-  expect(cookies[0]).to.have.property('httpOnly', false)
-  expect(cookies[0]).to.have.property('secure', false)
-  expect(cookies[0]).to.have.property('domain')
-  expect(cookies[0]).to.have.property('path')
-})</code></pre>
         </div>
         <div class="col-xs-5">
           <div class="well">
@@ -127,12 +108,6 @@ cy.getCookies().should('have.length', 1).should((cookies) => {
         <div class="col-xs-12">
           <h4 id="setCookie"><a href="https://on.cypress.io/setcookie">cy.setCookie()</a></h4>
           <p>To set a browser cookie, use the <a href="https://on.cypress.io/setcookie"><code>cy.setCookie()</code></a> command.</p>
-          <pre><code class="javascript">cy.getCookies().should('be.empty')
-
-cy.setCookie('foo', 'bar')
-
-// cy.getCookie() yields a cookie object
-cy.getCookie('foo').should('have.property', 'value', 'bar')</code></pre>
         </div>
 
         <div class="col-xs-12"><hr></div>
@@ -145,16 +120,6 @@ cy.getCookie('foo').should('have.property', 'value', 'bar')</code></pre>
         <div class="col-xs-7">
           <h4 id="clearCookie"><a href="https://on.cypress.io/clearcookie">cy.clearCookie()</a></h4>
           <p>To clear a browser cookie, use the <a href="https://on.cypress.io/clearcookie"><code>cy.clearCookie()</code></a> command.</p>
-          <pre><code class="javascript">cy.getCookie('token').should('be.null')
-
-cy.get('#clearCookie .set-a-cookie').click()
-
-cy.getCookie('token').should('have.property', 'value', '123ABC')
-
-// cy.clearCookies() yields null
-cy.clearCookie('token').should('be.null')
-
-cy.getCookie('token').should('be.null')</code></pre>
         </div>
         <div class="col-xs-5">
           <div class="well">
@@ -172,16 +137,6 @@ cy.getCookie('token').should('be.null')</code></pre>
         <div class="col-xs-7">
           <h4 id="clearCookies"><a href="https://on.cypress.io/clearcookies">cy.clearCookies()</a></h4>
           <p>To clear all browser cookies, use the <a href="https://on.cypress.io/clearcookies"><code>cy.clearCookies()</code></a> command.</p>
-          <pre><code class="javascript">cy.getCookies().should('be.empty')
-
-cy.get('#clearCookies .set-a-cookie').click()
-
-cy.getCookies().should('have.length', 1)
-
-// cy.clearCookies() yields null
-cy.clearCookies()
-
-cy.getCookies().should('be.empty')</code></pre>
         </div>
         <div class="col-xs-5">
           <div class="well">

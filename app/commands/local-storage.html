@@ -74,44 +74,6 @@
         <div class="col-xs-7">
           <h4 id="clearLocalStorage"><a href="https://on.cypress.io/clearlocalstorage">cy.clearLocalStorage()</a></h4>
           <p>To clear all data in local storage, use the <a href="https://on.cypress.io/clearlocalstorage"><code>cy.clearLocalStorage()</code></a> command.</p>
-          <pre><code class="javascript">cy.get('.ls-btn').click().should(() => {
-  expect(localStorage.getItem('prop1')).to.eq('red')
-  expect(localStorage.getItem('prop2')).to.eq('blue')
-  expect(localStorage.getItem('prop3')).to.eq('magenta')
-})
-
-// clearLocalStorage() yields the localStorage object
-cy.clearLocalStorage().should((ls) => {
-  expect(ls.getItem('prop1')).to.be.null
-  expect(ls.getItem('prop2')).to.be.null
-  expect(ls.getItem('prop3')).to.be.null
-})
-
-// Clear key matching string in Local Storage
-cy.get('.ls-btn').click().should(() => {
-  expect(localStorage.getItem('prop1')).to.eq('red')
-  expect(localStorage.getItem('prop2')).to.eq('blue')
-  expect(localStorage.getItem('prop3')).to.eq('magenta')
-})
-
-cy.clearLocalStorage('prop1').should((ls) => {
-  expect(ls.getItem('prop1')).to.be.null
-  expect(ls.getItem('prop2')).to.eq('blue')
-  expect(ls.getItem('prop3')).to.eq('magenta')
-})
-
-// Clear keys matching regex in Local Storage
-cy.get('.ls-btn').click().should(() => {
-  expect(localStorage.getItem('prop1')).to.eq('red')
-  expect(localStorage.getItem('prop2')).to.eq('blue')
-  expect(localStorage.getItem('prop3')).to.eq('magenta')
-})
-
-cy.clearLocalStorage(/prop1|2/).should((ls) => {
-  expect(ls.getItem('prop1')).to.be.null
-  expect(ls.getItem('prop2')).to.be.null
-  expect(ls.getItem('prop3')).to.eq('magenta')
-})</code></pre>
         </div>
         <div class="col-xs-5">
           <div class="well">
